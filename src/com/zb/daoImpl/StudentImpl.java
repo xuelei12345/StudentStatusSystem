@@ -8,4 +8,10 @@ public class StudentImpl implements Student {
     public void addStudent() {
         System.out.println("增加成功");
     }
+
+
+    //郭沫良  TEST
+    public void GMlTEST(){
+        int a=1;
+    }
 }
