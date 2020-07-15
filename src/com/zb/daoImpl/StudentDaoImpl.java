@@ -3,6 +3,7 @@ package com.zb.daoImpl;
 import com.zb.dao.StudentDao;
 import com.zb.pojo.Student;
 import com.zb.utils.DBUtil;
+import org.apache.commons.dbutils.QueryRunner;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -69,4 +70,18 @@ public class StudentDaoImpl implements StudentDao {
 
         return null;
     }
+
+    //留级功能
+    @Override
+    public int liuji(int sclass, int id) {
+        String sql = "update student set  sclass=? where id=?";
+        QueryRunner qr = new QueryRunner(DBUtil.getDataSource());
+        try {
+            return qr.update(sql,sclass,id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
 }

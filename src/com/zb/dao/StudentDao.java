@@ -21,4 +21,9 @@ public interface StudentDao {
 
     List<Student> selAllStudent();
 
+
+    //学生留级
+    int liuji(int sclass,int id);
+
+
 }
