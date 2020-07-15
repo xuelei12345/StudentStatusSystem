@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  $END梵蒂冈地方$
   </body>
 </html>

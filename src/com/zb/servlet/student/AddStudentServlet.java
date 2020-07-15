@@ -1,4 +1,4 @@
-package com.zb.servlet;
+package com.zb.servlet.student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,11 +9,12 @@ import java.io.IOException;
 
 @WebServlet(name = "AddStudentServlet")
 public class AddStudentServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    /**
+     * @author: Rwenjie
+     * @description: //TODO 任文杰测试上传
+     */
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.service(req, resp);
     }
 }

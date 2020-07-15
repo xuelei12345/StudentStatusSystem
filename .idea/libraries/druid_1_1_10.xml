@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="servlet-api">
+  <library name="druid-1.1.10">
     <CLASSES>
-      <root url="jar://D:/Apache/apache-tomcat-8.5.46/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/druid-1.1.10.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
