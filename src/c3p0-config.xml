@@ -3,8 +3,8 @@
     <!-- 默认配置，如果没有指定则使用这个配置 -->
     <default-config>
         <property name="user">root</property>
-        <property name="password">root</property>
-        <property name="jdbcUrl">jdbc:mysql://localhost:3306/yonghedb2</property>
+        <property name="password">weihongzhe</property>
+        <property name="jdbcUrl">jdbc:mysql://152.136.134.15:3306/student_status</property>
         <property name="driverClass">com.mysql.jdbc.Driver</property>
         <property name="checkoutTimeout">30000</property>
         <property name="idleConnectionTestPeriod">30</property>
