@@ -1,15 +1,14 @@
 package com.zb.utils;
 
+import com.alibaba.druid.pool.DruidDataSourceFactory;
+
+import javax.sql.DataSource;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
-
-import javax.sql.DataSource;
-
-import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 public class JdbcUtil {
 
@@ -19,7 +18,7 @@ public class JdbcUtil {
 			Properties p = new Properties();
 			//获取字节码目录
 			String path = JdbcUtil.class.getClassLoader().getResource("db.properties").getPath();
-			System.out.println(path);
+
 			FileInputStream in = new FileInputStream(path);
 			p.load(in);
 			ds = DruidDataSourceFactory.createDataSource(p);

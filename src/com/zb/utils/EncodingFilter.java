@@ -6,7 +6,7 @@ import java.io.IOException;
 public class EncodingFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("初始化过滤器");
+
     }
 
     @Override
@@ -21,6 +21,7 @@ public class EncodingFilter implements Filter {
         //过滤器设置编码
         servletRequest.setCharacterEncoding("utf-8");
         servletResponse.setCharacterEncoding("utf-8");
+        servletResponse.setContentType("text/html;charset=utf-8");
         //放行，执行后续的操作
         filterChain.doFilter(servletRequest,servletResponse);
     }
