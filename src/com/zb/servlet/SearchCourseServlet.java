@@ -22,6 +22,7 @@ public class SearchCourseServlet extends HttpServlet {
         System.out.println(sno);
         ElectiveDao electiveDao = new ElectiveDaoImpl();
         List<Elective> list = electiveDao.searchCourse(sno);
+        System.out.println(list);
         Gson gson = new Gson();
         String json = gson.toJson(list);
         PrintWriter pw = response.getWriter();

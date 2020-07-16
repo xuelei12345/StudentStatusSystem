@@ -27,7 +27,7 @@ public class ElectiveDaoImpl implements ElectiveDao {
     @Override
     public Sc searchOne(int cno, int sno) {
         QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
-        System.out.println(qr);
+
         String sql="select * from sc where sno = ? and cno = ?";
         try {
             return qr.query(sql,new BeanHandler<Sc>(Sc.class),sno,cno);
@@ -51,11 +51,11 @@ public class ElectiveDaoImpl implements ElectiveDao {
     }
 
     @Override
-    public void deleteElective(int cno, int sno) {
+    public void deleteElective(int sno, int cno) {
         QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
         String sql = "delete from sc where cno=? and sno=?";
         try {
-            qr.update(sql,cno,sno);
+            qr.update(sql,sno,cno);
         } catch (SQLException e) {
             e.printStackTrace();
         }

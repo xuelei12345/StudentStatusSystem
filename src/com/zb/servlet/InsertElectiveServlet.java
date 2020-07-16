@@ -20,7 +20,9 @@ public class InsertElectiveServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer cno = Integer.parseInt(request.getParameter("cno"));
+        System.out.println(cno);
         Integer sno = Integer.parseInt(request.getParameter("sno"));
+        System.out.println(sno);
         ElectiveDao electiveDao = new ElectiveDaoImpl();
         Sc sc=electiveDao.searchOne(cno,sno);
         System.out.println(sc);
