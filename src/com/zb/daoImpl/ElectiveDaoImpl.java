@@ -3,12 +3,17 @@ package com.zb.daoImpl;
 import com.zb.dao.ElectiveDao;
 import com.zb.pojo.Elective;
 import com.zb.pojo.Sc;
+import com.zb.utils.DBUtil;
 import com.zb.utils.JdbcUtil;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ElectiveDaoImpl implements ElectiveDao {
@@ -59,6 +64,55 @@ public class ElectiveDaoImpl implements ElectiveDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public List<Elective> getAll(int page) {
+        try {
+            Connection conn = DBUtil.getConn();
+            String sql = "select * from elective limit ?,5";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,page);
+            ResultSet rs = ps.executeQuery();
+            Elective elective =null;
+            List<Elective> list = new ArrayList<>();
+            while (rs.next()){
+                elective = new Elective();
+                elective.setId(rs.getInt("id"));
+                elective.setCno(rs.getInt("cno"));
+                elective.setCname(rs.getString("cname"));
+                elective.setCnumber(rs.getInt("cnumber"));
+                elective.setTeacher(rs.getString("teacher"));
+                elective.setCreate_time(rs.getString("created_time"));
+                elective.setMajor(rs.getString("major"));
+                list.add(elective);
+            }
+            DBUtil.close(conn, ps, rs);
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Integer getElectiveCount() {
+        try {
+            Connection conn = DBUtil.getConn();
+            String sql = "select count(*) as count from elective";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            int count = 0;
+            while (rs.next()){
+                count = rs.getInt("count");
+            }
+            DBUtil.close(conn, ps, rs);
+            return count;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
 
     }
 }
