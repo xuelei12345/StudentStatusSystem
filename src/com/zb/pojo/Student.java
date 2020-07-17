@@ -3,14 +3,14 @@ package com.zb.pojo;
 public class Student {
 	private int id;
 	private String sname;
-	private int sclass;
+	private String  sclass;
 	private int sno;
 	private int sage;
 	private String create_time;
 	private int deleted;
 	private String spwd;
 	private String major;
-	public Student(int id, String sname, int sclass, int sno, int sage, String create_time, int deleted, String spwd,
+	public Student(int id, String sname, String  sclass, int sno, int sage, String create_time, int deleted, String spwd,
 			String major) {
 		this.id = id;
 		this.sname = sname;
@@ -37,10 +37,10 @@ public class Student {
 	public void setSname(String sname) {
 		this.sname = sname;
 	}
-	public int getSclass() {
+	public String getSclass() {
 		return sclass;
 	}
-	public void setSclass(int sclass) {
+	public void setSclass(String sclass) {
 		this.sclass = sclass;
 	}
 	public int getSno() {

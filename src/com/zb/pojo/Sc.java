@@ -1,7 +1,7 @@
 package com.zb.pojo;
 
 public class Sc {
-	private int id;
+	private Integer id;
 	private int sno;
 	private int cno;
 	private int grade;
