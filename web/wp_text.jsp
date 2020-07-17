@@ -18,7 +18,7 @@
         $.ajax({
             url: "selectSecondGrade",
             type: "post",
-            data: {"sno":'1813004103'},
+            data: {"sno":'1813004109'},
             dataType: "json",
             success: function (result) {
                 console.log(result)
